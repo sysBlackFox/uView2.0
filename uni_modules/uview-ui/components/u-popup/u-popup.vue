@@ -51,6 +51,7 @@
 	 * popup 弹窗
 	 * @description 弹出层容器，用于展示弹窗、信息提示等内容，支持上、下、左、右和中部弹出。组件只提供容器，内部内容由用户自定义
 	 * @tutorial https://www.uviewui.com/components/popup.html
+	 * @property {String | Number}	offset				弹出偏移量 （默认 0 ）
 	 * @property {Boolean}			show				是否展示弹窗 (默认 false )
 	 * @property {Boolean}			overlay				是否显示遮罩 （默认 true ）
 	 * @property {String}			mode				弹出方向（默认 'bottom' ）
@@ -96,7 +97,7 @@
 					position: 'fixed',
 					display: 'flex',
 				}
-				style[this.mode] = 0
+				style[this.mode] = this.offset
 				if (this.mode === 'left') {
 					return uni.$u.deepMerge(style, {
 						bottom: 0,
